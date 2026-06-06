@@ -80,7 +80,30 @@ app.post('/login', (req, res) => {
     }
 });
 
-// Encendemos el servidor //
+   // CONSULTAR TODOS LOS USUARIOS //
+
+app.get('/usuarios', (req, res) => {
+    res.status(200).json(usuarios);
+});
+
+// CONSULTAR UN USUARIO //
+
+app.get('/usuarios/:usuario', (req, res) => {
+
+    const usuarioEncontrado = usuarios.find(
+        user => user.usuario === req.params.usuario
+    );
+
+    if (!usuarioEncontrado) {
+        return res.status(404).json({
+            mensaje: 'Usuario no encontrado'
+        });
+    }
+
+    res.status(200).json(usuarioEncontrado);
+});
+
+     // Encendemos el servidor //
 app.listen(PORT, () => {
     console.log(`Servidor ejecutándose en puerto ${PORT}`);
 });
