@@ -1,0 +1,116 @@
+ENDPOINTS API LOGIN-API
+
+---
+
+1 REGISTRO DE USUARIO
+
+Método HTTP:
+POST
+
+URL:
+http://localhost:3000/registro
+
+Descripción:
+Permite registrar un nuevo usuario en el sistema.
+
+Body:
+
+{
+"usuario": "luis",
+"password": "123456"
+}
+
+Respuesta Exitosa:
+
+{
+"mensaje": "Usuario registrado correctamente"
+}
+
+----------------------------------------------
+
+2 INICIO DE SESIÓN
+
+Método HTTP:
+POST
+
+URL:
+http://localhost:3000/login
+
+Descripción:
+Permite autenticar un usuario registrado.
+
+Body:
+
+{
+"usuario": "luis",
+"password": "123456"
+}
+
+Respuesta Exitosa:
+
+{
+"mensaje": "Autenticación satisfactoria"
+}
+
+----------------------------------------------
+
+3 CONSULTA DE TODOS LOS USUARIOS
+
+Método HTTP:
+GET
+
+URL:
+http://localhost:3000/usuarios
+
+Descripción:
+Permite visualizar todos los usuarios registrados en el sistema.
+
+Respuesta:
+
+[
+{
+"usuario": "luis",
+"password": "123456"
+}
+]
+
+---------------------------------------------------
+
+4 CONSULTA DE USUARIO ESPECÍFICO
+
+Método HTTP:
+GET
+
+URL:
+http://localhost:3000/usuarios/:usuario
+
+Ejemplo:
+
+http://localhost:3000/usuarios/luis
+
+Descripción:
+Permite consultar la información de un usuario específico.
+
+Respuesta:
+
+{
+"usuario": "luis",
+"password": "123456"
+}
+
+-----------------------------------------------------------
+
+TECNOLOGÍAS UTILIZADAS
+
+* Node.js
+* Express.js
+* JavaScript
+* Postman
+* Git
+* GitHub
+
+---------------------------------------------------------
+
+REPOSITORIO DEL PROYECTO
+
+https://github.com/LuchoRoldan92/Login-API
